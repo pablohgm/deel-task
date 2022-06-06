@@ -5,6 +5,8 @@ const sequelize = new Sequelize({
   storage: './database.sqlite3'
 });
 
+const Op = Sequelize.Op
+
 class Profile extends Sequelize.Model {}
 Profile.init(
   {
@@ -84,6 +86,7 @@ Job.belongsTo(Contract)
 
 module.exports = {
   sequelize,
+  Op,
   Profile,
   Contract,
   Job
